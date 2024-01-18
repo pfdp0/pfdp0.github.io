@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="jquery-3.6.1.js"></script>
+    <title>Pierre-Francois De Plaen</title>
+</head>
+<body>
+    <header>
+        <h3>Pierre-François De Plaen <span>PhD Student @ KU Leuven</span></h3>
+        <nav>
+            <a href="#publications">Publications</a>
+            <a href="#curriculum-vitae">CV</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section id="presentation" class="full-section">
+            <h1>Welcome !</h1>
+            <p>
+                Pierre-François is a third-year PhD student in computer vision at KU Leuven, within the TRACE project.
+                His research involves advancing recognition algorithms for autonomous vehicles, ensuring reliability in the face of novel scenarios.
+                His primary research areas include video understanding and out-of-distribution detection.
+                Before his PhD, he obtained a Masters in Mathematical Engineering from UCLouvain.
+            </p>
+            <div class="call_to_action">
+                <a href="#publications">
+                    <svg version="1.1"
+                         width="44" height="24"
+                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path d="M 2 2 L 22 22 L 42 2" class="arrow"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+        <section id="publications" class="full-section">
+            <h2>Recent Publications</h2>
+            <ul>
+                <li>
+                    <div class="image">
+                        <img src="img/contrastr/cover.png" alt=""/>
+                    </div>
+                    <div class="content">
+                        <h3><a target=”_blank” href="https://openaccess.thecvf.com/content/WACV2024/html/De_Plaen_Contrastive_Learning_for_Multi-Object_Tracking_With_Transformers_WACV_2024_paper.html">Contrastive Learning for Multi-Object Tracking With Transformers</a><span class="conference"> - WACV 2024</span></h3>
+                        <p class="authors">
+                            Pierre-François De Plaen*, Nicola Marinello*,
+                            Marc Proesmans, Tinne Tuytelaars, Luc Van Gool
+                        </p>
+                        <p class="abstract">
+                            The DEtection TRansformer (DETR) opened new possibilities for object detection by modeling it as a translation task: converting image features into object-level representations.
+                            Previous works typically add expensive modules to DETR to perform Multi-Object Tracking (MOT), resulting in more complicated architectures.
+                            We instead show how DETR can be turned into a MOT model by employing an instance-level contrastive loss, a revised sampling strategy and a lightweight assignment method.
+                            Our training scheme learns object appearances while preserving detection capabilities and with little overhead. Its performance surpasses
+                            the previous state-of-the-art by +2.6 mMOTA on the challenging BDD100K dataset and is comparable to existing transformer-based methods on the MOT17 dataset
+                        </p>
+
+                    </div>
+                    <div class="links">
+                        <a target=”_blank” href="https://openaccess.thecvf.com/content/WACV2024/papers/De_Plaen_Contrastive_Learning_for_Multi-Object_Tracking_With_Transformers_WACV_2024_paper.pdf">Paper</a>
+                        <a target=”_blank” href="https://openaccess.thecvf.com/content/WACV2024/supplemental/De_Plaen_Contrastive_Learning_for_WACV_2024_supplemental.pdf">Supplementary</a>
+                        <a target=”_blank” href="https://youtu.be/5-tjV4VkApQ">Video</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="image">
+                        <img src="img/sinkhorn/cover.png" alt=""/>
+                    </div>
+                    <div class="content">
+                        <h3><a target=”_blank” href="https://openaccess.thecvf.com/content/CVPR2023/html/De_Plaen_Unbalanced_Optimal_Transport_A_Unified_Framework_for_Object_Detection_CVPR_2023_paper.html">Unbalanced Optimal Transport: A Unified Framework for Object Detection</a><span class="conference"> - CVPR 2023</span></h3>
+                        <p class="authors">
+                            Henri De Plaen*, Pierre-François De Plaen*,
+                            Johan Suykens, Marc Proesmans, Tinne Tuytelaars, Luc Van Gool
+                        </p>
+                        <p class="abstract">
+                            During training, supervised object detection tries to correctly match the predicted bounding boxes and associated classification scores to the ground truth.
+                            This is essential to determine which predictions are to be pushed towards which solutions, or to be discarded.
+                            Popular matching strategies include matching to the closest ground truth box (mostly used in combination with anchors),
+                            or matching via the Hungarian algorithm (mostly used in anchor-free methods).
+                            Each of these strategies comes with its own properties, underlying losses, and heuristics.
+                            We show how Unbalanced Optimal Transport unifies these different approaches and opens a whole continuum of methods in between.
+                            This allows for a finer selection of the desired properties.
+                            Experimentally, we show that training an object detection model with Unbalanced Optimal Transport is able to reach the state-of-the-art both in terms of Average Precision and Average Recall as well as to provide a faster initial convergence.
+                            The approach is well suited for GPU implementation, which proves to be an advantage for large-scale models.
+                        </p>
+                    </div>
+                    <div class="links">
+                        <a target=”_blank” href="http://gh.io/uotod" class="demo">Demo</a>
+                        <a target=”_blank” href="https://openaccess.thecvf.com/content/CVPR2023/papers/De_Plaen_Unbalanced_Optimal_Transport_A_Unified_Framework_for_Object_Detection_CVPR_2023_paper.pdf">Paper</a>
+                        <a target=”_blank” href="https://openaccess.thecvf.com/content/CVPR2023/supplemental/De_Plaen_Unbalanced_Optimal_Transport_CVPR_2023_supplemental.pdf">Supplementary</a>
+                        <a target=”_blank” href="https://github.com/hdeplaen/uotod">Code</a>
+                        <a target=”_blank” href="https://youtu.be/Ma3Y-TbpJNs">Video</a>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <section id="curriculum-vitae" class="full-section">
+            <h2>Curriculum Vitae</h2>
+            <p>
+                Coming soon !
+            </p>
+        </section>
+        <section id="contact" class="full-section">
+            <h2>Contact</h2>
+            <ul>
+                <li><a href="mailto:pdeplaen@esat.kuleuven.be">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <span>pdeplaen@esat.kuleuven.be</span>
+                </a></li>
+                <li><a href="https://www.linkedin.com/in/pfdeplaen/">
+                    <img src="img/linkedin-svgrepo-com.svg" alt=""/>
+                    <span>pfdeplaen</span>
+                </a></li>
+                <li><a href="https://github.com/pfdp0">
+                    <img src="img/github-mark-white.svg" alt=""/>
+                    <span>pfdp0</span>
+                </a></li>
+                <li><a href="https://twitter.com/pfdeplaen">
+                    <img src="img/x-social-media-black-icon.svg" alt=""/>
+                    <span>pfdeplaen</span>
+                </a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+<script>
+    $(function(){
+        var pres_padd = $('#presentation').innerHeight() - $('#presentation').height();
+        $('#presentation') .css({'min-height': (window.innerHeight - pres_padd)+'px'});
+        $(window).bind('resize', function(){
+            $('#presentation') .css({'min-height': (window.innerHeight - pres_padd)+'px'});
+        });
+    });
+</script>
+</html>
