@@ -13,17 +13,16 @@ header{
   position: fixed;
   left: 0;
   right: 0;
-  display: grid;
+  display: flex;
   box-sizing: border-box;
-  grid-template-columns: 1fr 240px;
   background-color: rgba(0, 0, 0, 0.85);
-  padding: 20px 20px;
+  padding: 3vh 2.4vw;
   z-index: 99;
 }
 
 header h3{
+  flex-grow: 1;
   font-size: 1em;
-  grid-column-start: 1;
   padding: 0 6px;
   margin: 0;
   color: #fff;
@@ -36,7 +35,7 @@ header h3 span{
 }
 
 header nav{
-  grid-column-start: 2;
+  flex-grow: 1;
   text-align: right;
 }
 
@@ -89,6 +88,13 @@ main .full-section:nth-child(2n+1){
 
 main .full-section:nth-child(1){
   padding-top: 72px;
+}
+
+@media screen and (max-width: 800px) {
+  main .full-section{
+    padding: 3vh 2vw;
+    padding-bottom: 4vh; /*40px;*/
+  }
 }
 
 h1{
@@ -160,7 +166,7 @@ h1{
 
 #publications ul{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   padding: 0;
   margin: 0;
 }
@@ -171,7 +177,7 @@ h1{
   margin: 2vh 0; /*old: 12px 20px;*/
   background-color: #fff;
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 32% 68%;
 }
 
 #publications ul li .image{
@@ -211,6 +217,7 @@ h1{
 #publications .links{
   align-self: end;
   display: flex;
+  flex-wrap: wrap;
 }
 
 #publications .links a{
@@ -282,16 +289,11 @@ h1{
 
 
 
-
-@media screen and (max-width: 1400px) {
-  #publications ul{
-    grid-template-columns: 1fr;
-  }
-}
-
 @media screen and (max-width: 800px) {
   #publications ul li{
     grid-template-columns: 1fr;
+    padding: 2vh 1.2vw;
+    margin: 1vh 0;
   }
 
 
