@@ -22,6 +22,7 @@ header{
 }
 
 header h3{
+  font-size: 1em;
   grid-column-start: 1;
   padding: 0 6px;
   margin: 0;
@@ -44,7 +45,7 @@ header nav a{
   position: relative;
   text-decoration: none;
   padding: 0 6px;
-  font-size: 16px;
+  font-size: 0.9em; /*16px;*/
   color: #fff;
   margin-top: 2px;  /* to align vertically (since "after" was added) */
 }
@@ -74,7 +75,7 @@ main .full-section{
 }
 
 main .full-section h2{
-  font-size: 26px;
+  font-size: 1.6em;
   font-weight: 400;
   color: #fff;
 }
@@ -92,17 +93,32 @@ main .full-section:nth-child(1){
 
 h1{
   margin: 12px 4px;
-  font-size: 32px;
-  font-weight: 300;
+  font-size: 1.8em;
+  font-weight: 100;
 }
 
 #presentation{
-  background: url("img/castle.jpg") no-repeat bottom center;
-  box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.5);
+  background: transparent;
+  position: relative;
   background-size: cover;
   min-height: 400px;
   padding-bottom: 60px;  /* for scroll button */
   color: white;
+  overflow: hidden;
+}
+
+#presentation::before {
+  content: "";
+  position: absolute;
+  top: -1%;
+  left: -1%;
+  width: 102%;
+  height: 102%;
+  background: url("img/castle.jpg") no-repeat bottom center;
+  background-size: cover;
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.5);
+  filter: blur(3px);
+  z-index: -1;
 }
 
 #presentation h1{
@@ -110,10 +126,11 @@ h1{
 }
 
 #presentation p{
-  font-size: 18px;
+  font-size: 1em; /*18px;*/
   font-weight: 300;
   line-height: 1.2;
   padding: 0 6vw;
+  margin: 10px 0;
 }
 
 #presentation .call_to_action{
@@ -172,7 +189,7 @@ h1{
 #publications ul li .image img{
   max-width: 100%;
   vertical-align: middle;
-  max-height: 300px;
+  max-height: 400px;
   margin: auto;
 }
 
@@ -183,13 +200,22 @@ h1{
 }
 
 #publications .links{
+  padding-top: 0;
+}
+
+#publications .authors{
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+#publications .links{
   align-self: end;
   display: flex;
 }
 
 #publications .links a{
   text-decoration: none;
-  font-size: 16px;
+  font-size: 1em; /*16px;*/
   padding: 6px 10px;
   margin: 2px 4px;
   border: 2px solid #3e9eff;
@@ -216,7 +242,7 @@ h1{
 
 #publications .content h3{
   margin: 8px 0;
-  font-size: 22px;
+  font-size: 1.3em; /*22px;*/
   font-weight: 400;
   color: #2F4858;
 }
@@ -239,6 +265,20 @@ h1{
   margin: 8px 0;
 }
 
+#publications .text .tldr::before{
+  content: "TL;DR: ";
+  font-weight: bold;
+}
+
+#publications .text .abstract::before{
+  content: "Abstract: ";
+  font-weight: bold;
+}
+
+#publications .text .tldr, #publications .text .abstract{
+  display: block;
+  margin: 4px 0;
+}
 
 
 

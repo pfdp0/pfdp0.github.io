@@ -19,16 +19,17 @@
         <section id="presentation" class="full-section">
             <h1>Welcome !</h1>
             <p>
-                Pierre-François is a third-year PhD student in computer vision at KU Leuven, within the TRACE project.
-                His research involves advancing recognition algorithms for autonomous vehicles, ensuring reliability in the face of novel scenarios.
+                Pierre-François is a third-year PhD student in computer vision at KU Leuven within the TRACE project.
+                <br/>His work centers around developing recognition algorithms for autonomous vehicles, ensuring reliability in the face of novel scenarios.
                 His primary research areas include video understanding and out-of-distribution detection.
-                Before his PhD, he obtained a Masters in Mathematical Engineering from UCLouvain.
+                His research is supervised by Professor Luc Van Gool.
+                <br/>Before his PhD, he obtained a Masters in Mathematical Engineering from UCLouvain.
             </p>
             <div class="call_to_action">
                 <a href="#publications">
                     <svg version="1.1"
                          width="44" height="24"
-                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                         xmlns="http://www.w3.org/2000/svg">
                         <path d="M 2 2 L 22 22 L 42 2" class="arrow"/>
                     </svg>
                 </a>
@@ -47,12 +48,17 @@
                             Pierre-François De Plaen*, Nicola Marinello*,
                             Marc Proesmans, Tinne Tuytelaars, Luc Van Gool
                         </p>
-                        <p class="abstract">
-                            The DEtection TRansformer (DETR) opened new possibilities for object detection by modeling it as a translation task: converting image features into object-level representations.
-                            Previous works typically add expensive modules to DETR to perform Multi-Object Tracking (MOT), resulting in more complicated architectures.
-                            We instead show how DETR can be turned into a MOT model by employing an instance-level contrastive loss, a revised sampling strategy and a lightweight assignment method.
-                            Our training scheme learns object appearances while preserving detection capabilities and with little overhead. Its performance surpasses
-                            the previous state-of-the-art by +2.6 mMOTA on the challenging BDD100K dataset and is comparable to existing transformer-based methods on the MOT17 dataset
+                        <p class="text">
+                            <span class="tldr">
+                                We show how object detection models can be turned into multi-object tracking models with little overhead. We also introduce a pre-train scheme that does not require tracking annotations.
+                            </span>
+                            <span class="abstract">
+                                The DEtection TRansformer (DETR) opened new possibilities for object detection by modeling it as a translation task: converting image features into object-level representations.
+                                Previous works typically add expensive modules to DETR to perform Multi-Object Tracking (MOT), resulting in more complicated architectures.
+                                We instead show how DETR can be turned into a MOT model by employing an instance-level contrastive loss, a revised sampling strategy and a lightweight assignment method.
+                                Our training scheme learns object appearances while preserving detection capabilities and with little overhead. Its performance surpasses
+                                the previous state-of-the-art by +2.6 mMOTA on the challenging BDD100K dataset and is comparable to existing transformer-based methods on the MOT17 dataset
+                            </span>
                         </p>
 
                     </div>
@@ -72,16 +78,21 @@
                             Henri De Plaen*, Pierre-François De Plaen*,
                             Johan Suykens, Marc Proesmans, Tinne Tuytelaars, Luc Van Gool
                         </p>
-                        <p class="abstract">
-                            During training, supervised object detection tries to correctly match the predicted bounding boxes and associated classification scores to the ground truth.
-                            This is essential to determine which predictions are to be pushed towards which solutions, or to be discarded.
-                            Popular matching strategies include matching to the closest ground truth box (mostly used in combination with anchors),
-                            or matching via the Hungarian algorithm (mostly used in anchor-free methods).
-                            Each of these strategies comes with its own properties, underlying losses, and heuristics.
-                            We show how Unbalanced Optimal Transport unifies these different approaches and opens a whole continuum of methods in between.
-                            This allows for a finer selection of the desired properties.
-                            Experimentally, we show that training an object detection model with Unbalanced Optimal Transport is able to reach the state-of-the-art both in terms of Average Precision and Average Recall as well as to provide a faster initial convergence.
-                            The approach is well suited for GPU implementation, which proves to be an advantage for large-scale models.
+                        <p class="text">
+                            <span class="tldr">
+                                We introduce a much more versatile new class of matching strategies unifying many existing ones, as well as being well suited for GPUs.
+                            </span>
+                            <span class="abstract">
+                                During training, supervised object detection tries to correctly match the predicted bounding boxes and associated classification scores to the ground truth.
+                                This is essential to determine which predictions are to be pushed towards which solutions, or to be discarded.
+                                Popular matching strategies include matching to the closest ground truth box (mostly used in combination with anchors),
+                                or matching via the Hungarian algorithm (mostly used in anchor-free methods).
+                                Each of these strategies comes with its own properties, underlying losses, and heuristics.
+                                We show how Unbalanced Optimal Transport unifies these different approaches and opens a whole continuum of methods in between.
+                                This allows for a finer selection of the desired properties.
+                                Experimentally, we show that training an object detection model with Unbalanced Optimal Transport is able to reach the state-of-the-art both in terms of Average Precision and Average Recall as well as to provide a faster initial convergence.
+                                The approach is well suited for GPU implementation, which proves to be an advantage for large-scale models.
+                                </span>
                         </p>
                     </div>
                     <div class="links">
@@ -135,6 +146,20 @@
         $('#presentation') .css({'min-height': (window.innerHeight - pres_padd)+'px'});
         $(window).bind('resize', function(){
             $('#presentation') .css({'min-height': (window.innerHeight - pres_padd)+'px'});
+        });
+    });
+
+    $(document).ready(function() {
+        $('.abstract').each(function() {
+            var fullAbstract = $(this).text();
+            var words = fullAbstract.split(' ');
+            if (words.length > 100) {
+                var shortAbstract = words.slice(0, 100).join(' ') + '... ';
+                var readMoreButton = $('<button>').text('Read More').on('click', function() {
+                    $(this).parent().text(fullAbstract);
+                });
+                $(this).text(shortAbstract).append(readMoreButton);
+            }
         });
     });
 </script>
