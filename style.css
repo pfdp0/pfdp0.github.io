@@ -22,7 +22,7 @@ header{
 
 header h3{
   flex-grow: 1;
-  font-size: 1em;
+  font-size: 1.2em;
   padding: 0 6px;
   margin: 0;
   color: #fff;
@@ -44,7 +44,7 @@ header nav a{
   position: relative;
   text-decoration: none;
   padding: 0 6px;
-  font-size: 0.9em; /*16px;*/
+  font-size: 1em; /*16px;*/
   color: #fff;
   margin-top: 2px;  /* to align vertically (since "after" was added) */
 }
@@ -74,7 +74,7 @@ main .full-section{
 }
 
 main .full-section h2{
-  font-size: 1.6em;
+  font-size: 1.8em;
   font-weight: 400;
   color: #fff;
 }
@@ -99,7 +99,7 @@ main .full-section:nth-child(1){
 
 h1{
   margin: 12px 4px;
-  font-size: 1.8em;
+  font-size: 2em;
   font-weight: 100;
 }
 
@@ -210,8 +210,9 @@ h1{
 }
 
 #publications .authors{
-  font-size: 0.9em;
+  font-size: 0.95em;
   font-style: italic;
+  margin: 8px 0;
 }
 
 #publications .links{
@@ -222,7 +223,7 @@ h1{
 
 #publications .links a{
   text-decoration: none;
-  font-size: 1em; /*16px;*/
+  font-size: 1.1em; /*16px;*/
   padding: 6px 10px;
   margin: 2px 4px;
   border: 2px solid #3e9eff;
@@ -265,11 +266,6 @@ h1{
 
 #publications .content h3 span{
   font-style: italic;
-}
-
-
-#publications .content .authors{
-  margin: 8px 0;
 }
 
 #publications .text .tldr::before{
