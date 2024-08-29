@@ -8,24 +8,25 @@
 </head>
 <body>
     <header>
-        <h3>Pierre-François De Plaen <span>PhD Student @ KU Leuven</span></h3>
+        <h3></h3>
         <nav>
             <a href="#publications">Publications</a>
             <a href="#curriculum-vitae">CV</a>
-            <a href="#contact">Contact</a>
+            <a href="#contact">Get in touch</a>
         </nav>
     </header>
     <main>
         <section id="presentation" class="full-section">
-            <h1>Welcome !</h1>
-            <p>
-                Pierre-François is a third-year PhD student in computer vision at KU Leuven within the TRACE project.
-                <br/>His research involves the development of recognition algorithms for autonomous vehicles,
-                with a key emphasis on ensuring reliability in novel scenarios.
-                His primary research areas include video understanding and out-of-distribution detection.
-                His research is supervised by Professor Luc Van Gool., Professor Tinne Tuytelaars and Dr. Marc Proesmans.
-                <br/>Before his PhD, he obtained a Master in Mathematical Engineering from UCLouvain.
-            </p>
+            <div class="content">
+                <h1>Hello, I'm Pierre-François.</h1>
+                <p>
+                    I'm a third-year PhD student in computer vision at KU Leuven within the TRACE project.
+                    <br/>My primary research interests include representation learning, autonomous driving and out-of-distribution detection.
+                    Ultimately, I aim to develop algorithms that can reason in a spatio-temporal context
+                    and that are aware of their own limitations.
+                    <br/>Before my PhD, I obtained a Master in Mathematical Engineering from UCLouvain.
+                </p>
+            </div>
             <div class="call_to_action">
                 <a href="#publications">
                     <svg version="1.1"
@@ -41,10 +42,11 @@
             <ul>
                 <li>
                     <div class="image">
+                        <div class="conference">WACV 2024</div>
                         <img src="img/contrastr/cover.png" alt=""/>
                     </div>
                     <div class="content">
-                        <h3><a target=”_blank” href="https://openaccess.thecvf.com/content/WACV2024/html/De_Plaen_Contrastive_Learning_for_Multi-Object_Tracking_With_Transformers_WACV_2024_paper.html">Contrastive Learning for Multi-Object Tracking With Transformers</a><span class="conference"> - WACV 2024</span></h3>
+                        <h3><a target=”_blank” href="https://openaccess.thecvf.com/content/WACV2024/html/De_Plaen_Contrastive_Learning_for_Multi-Object_Tracking_With_Transformers_WACV_2024_paper.html">Contrastive Learning for Multi-Object Tracking With Transformers</a></h3>
                         <p class="authors">
                             <b>Pierre-François De Plaen*</b>, Nicola Marinello*,
                             Marc Proesmans, Tinne Tuytelaars, Luc Van Gool
@@ -66,15 +68,17 @@
                     <div class="links">
                         <a target=”_blank” href="https://openaccess.thecvf.com/content/WACV2024/papers/De_Plaen_Contrastive_Learning_for_Multi-Object_Tracking_With_Transformers_WACV_2024_paper.pdf">Paper</a>
                         <a target=”_blank” href="https://openaccess.thecvf.com/content/WACV2024/supplemental/De_Plaen_Contrastive_Learning_for_WACV_2024_supplemental.pdf">Supplementary</a>
+                        <a target=”_blank” href="https://github.com/pfdp0/ContrasTR">Code</a>
                         <a target=”_blank” href="https://youtu.be/5-tjV4VkApQ">Video</a>
                     </div>
                 </li>
                 <li>
                     <div class="image">
+                        <div class="conference">CVPR 2023</div>
                         <img src="img/sinkhorn/cover.png" alt=""/>
                     </div>
                     <div class="content">
-                        <h3><a target=”_blank” href="https://openaccess.thecvf.com/content/CVPR2023/html/De_Plaen_Unbalanced_Optimal_Transport_A_Unified_Framework_for_Object_Detection_CVPR_2023_paper.html">Unbalanced Optimal Transport: A Unified Framework for Object Detection</a><span class="conference"> - CVPR 2023</span></h3>
+                        <h3><a target=”_blank” href="https://openaccess.thecvf.com/content/CVPR2023/html/De_Plaen_Unbalanced_Optimal_Transport_A_Unified_Framework_for_Object_Detection_CVPR_2023_paper.html">Unbalanced Optimal Transport: A Unified Framework for Object Detection</a></h3>
                         <p class="authors">
                             Henri De Plaen*, <b>Pierre-François De Plaen*</b>,
                             Johan Suykens, Marc Proesmans, Tinne Tuytelaars, Luc Van Gool
@@ -113,7 +117,7 @@
             </p>
         </section>
         <section id="contact" class="full-section">
-            <h2>Contact</h2>
+            <h2>Get In Touch</h2>
             <ul>
                 <li><a href="mailto:pdeplaen@esat.kuleuven.be">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
@@ -143,10 +147,11 @@
 </body>
 <script>
     $(function(){
-        var pres_padd = $('#presentation').innerHeight() - $('#presentation').height();
-        $('#presentation') .css({'min-height': (window.innerHeight - pres_padd)+'px'});
+        var presebtation = $('#presentation');
+        var pres_padd = presebtation.innerHeight() - presebtation.height();
+        presebtation .css({'min-height': (window.innerHeight - pres_padd + 1)+'px'});
         $(window).bind('resize', function(){
-            $('#presentation') .css({'min-height': (window.innerHeight - pres_padd)+'px'});
+            $('#presentation') .css({'min-height': (window.innerHeight - pres_padd + 1)+'px'});
         });
     });
 
@@ -161,6 +166,26 @@
                 });
                 $(this).text(shortAbstract).append(readMoreButton);
             }
+        });
+
+        $('a[href^="#"]').on('click', function(event) {
+            var headerHeight = $('header').innerHeight();
+            var target = $(this.getAttribute('href'));
+            if( target.length ) {
+                event.preventDefault();
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top - headerHeight
+                }, 1000);
+            }
+        });
+
+        $(window).scroll(function() {
+            var header = $('header');
+            var headerHeight = header.innerHeight();
+            var presentationHeight = $('#presentation').innerHeight();
+            var scroll = $(window).scrollTop();
+            var opacity = Math.min(scroll / (presentationHeight-headerHeight), 1);
+            header.css('background-color', 'rgba(240, 240, 244, ' + opacity + ')');
         });
     });
 </script>

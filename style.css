@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 html{
   scroll-behavior: smooth;
 }
 
 body{
-  font-family: 'Roboto', sans-serif;
+  font-family: "Inter", sans-serif;
   margin: 0;
 }
 
@@ -15,14 +16,14 @@ header{
   right: 0;
   display: flex;
   box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(240, 240, 244, 0); /*rgba(0, 0, 0, 0.85);*/
   padding: 3vh 2.4vw;
   z-index: 99;
 }
 
 header h3{
   flex-grow: 1;
-  font-size: 1.2em;
+  font-size: 1.1em;
   padding: 0 6px;
   margin: 0;
   color: #fff;
@@ -43,10 +44,11 @@ header nav a{
   display: inline-block;
   position: relative;
   text-decoration: none;
-  padding: 0 6px;
-  font-size: 1em; /*16px;*/
-  color: #fff;
+  padding: 0 4px;
+  font-size: 0.9em; /*16px;*/
+  color: #666; /*#fff;*/
   margin-top: 2px;  /* to align vertically (since "after" was added) */
+  text-transform: uppercase
 }
 
 
@@ -55,7 +57,7 @@ header a::after {
   display: block;
   width: 0;
   height: 2px;
-  background: white;
+  background: #666;
   transition: width .3s;
 }
 
@@ -68,7 +70,7 @@ main .full-section{
   margin: 0;
   padding: 6vh 8vw; /*24px 60px;*/
   padding-bottom: 8vh; /*40px;*/
-  background-color: #2F4858;
+  background-color: #2180A6; /*#2F4858;*/
   justify-items: center;
   align-items: center;
 }
@@ -79,7 +81,7 @@ main .full-section h2{
   color: #fff;
 }
 main .full-section:nth-child(2n+1) h2{
-  color: #2F4858;
+  color: #2180A6; /*#2F4858;*/
 }
 
 main .full-section:nth-child(2n+1){
@@ -100,7 +102,7 @@ main .full-section:nth-child(1){
 h1{
   margin: 12px 4px;
   font-size: 2em;
-  font-weight: 100;
+  font-weight: 200;
 }
 
 #presentation{
@@ -109,8 +111,13 @@ h1{
   background-size: cover;
   min-height: 400px;
   padding-bottom: 60px;  /* for scroll button */
-  color: white;
   overflow: hidden;
+  font-family: "Inter", sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #presentation::before {
@@ -122,21 +129,31 @@ h1{
   height: 102%;
   background: url("img/castle.jpg") no-repeat bottom center;
   background-size: cover;
-  box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.5);
+  box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.85);
   filter: blur(3px);
   z-index: -1;
 }
 
+#presentation .content{
+  margin-bottom: 15vh;
+}
+
 #presentation h1{
-  padding: 4vh 6vw;
+  padding: 0 6vw;
+  margin: 0;
+  font-size: 1.6em;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #1d7193;
 }
 
 #presentation p{
-  font-size: 1em; /*18px;*/
-  font-weight: 300;
-  line-height: 1.2;
+  font-size: 1.2em; /*18px;*/
+  font-weight: 400;
+  line-height: 1.5;
   padding: 0 6vw;
-  margin: 10px 0;
+  margin: 0;
+  color: #555;
 }
 
 #presentation .call_to_action{
@@ -149,18 +166,18 @@ h1{
   display: block;
   margin: auto;
   width: 42px;
-  height: 24px;
+  height: 28px;
 }
 
 #presentation .call_to_action a .arrow{
-  stroke: white;
-  stroke-width: 3;
+  stroke: #2180A6;
+  stroke-width: 4;
   fill: none;
   transition: stroke-width .4s ease;
 }
 
 #presentation .call_to_action a:hover .arrow{
-  stroke-width: 5;
+  stroke-width: 6;
 }
 
 
@@ -181,6 +198,7 @@ h1{
 }
 
 #publications ul li .image{
+  position: relative;
   /*background-color: #3e9eff;*/
   grid-column-start: 1;
   grid-column-end: 2;
@@ -197,12 +215,27 @@ h1{
   vertical-align: middle;
   max-height: 400px;
   margin: auto;
+  margin-top: 5vh;
+}
+
+#publications ul li .image .conference{
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(52, 191, 166, 0.8);
+  padding: 2px 4px;
+  font-weight: 300;
+  color: white;
 }
 
 #publications .content,
 #publications .links{
   grid-column-start: 2;
   padding: 8px 20px;
+}
+
+#publications .content{
+  font-weight: 300;
 }
 
 #publications .links{
@@ -226,13 +259,13 @@ h1{
   font-size: 1.1em; /*16px;*/
   padding: 6px 10px;
   margin: 2px 4px;
-  border: 2px solid #3e9eff;
-  color: #3e9eff;
+  border: 2px solid #585CA6; /*#3e9eff;*/
+  color: #585CA6;
   border-radius: 8px;
 }
 
 #publications .links a:hover{
-  background-color: #3e9eff;
+  background-color: #585CA6;
   color: #fff;
 }
 
@@ -250,32 +283,28 @@ h1{
 
 #publications .content h3{
   margin: 8px 0;
-  font-size: 1.3em; /*22px;*/
-  font-weight: 400;
-  color: #2F4858;
+  font-size: 1.5em; /*22px;*/
+  font-weight: 300;
+  color: #2180A6; /*#2F4858;*/
 }
 
 #publications .content h3 a{
   text-decoration: none;
-  color: #2F4858;
+  color: #2180A6;
 }
 
 #publications .content h3 a:hover{
-  color: #03222b;
-}
-
-#publications .content h3 span{
-  font-style: italic;
+  color: #185b77;
 }
 
 #publications .text .tldr::before{
   content: "TL;DR: ";
-  font-weight: bold;
+  font-weight: 500;
 }
 
 #publications .text .abstract::before{
   content: "Abstract: ";
-  font-weight: bold;
+  font-weight: 500;
 }
 
 #publications .text .tldr, #publications .text .abstract{
@@ -334,3 +363,5 @@ h1{
         flex-direction: column;
     }
 }
+
+
