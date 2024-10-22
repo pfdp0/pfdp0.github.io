@@ -246,6 +246,7 @@ h1{
   font-size: 0.95em;
   font-style: italic;
   margin: 8px 0;
+  color: #333;
 }
 
 #publications .links{
@@ -299,15 +300,18 @@ h1{
 
 #publications .text .tldr::before{
   content: "TL;DR: ";
-  font-weight: 500;
+  font-weight: 400;
+  color: #333;
 }
 
 #publications .text .abstract::before{
   content: "Abstract: ";
-  font-weight: 500;
+  font-weight: 400;
+  color: #333;
 }
 
 #publications .text .tldr, #publications .text .abstract{
+  color: #555;
   display: block;
   margin: 4px 0;
 }
@@ -331,6 +335,118 @@ h1{
   header h3 span{
     display: none;
   }
+}
+
+
+#curriculum-vitae {
+  padding: 6vh 8vw;
+  background-color: #f9f9f9;
+}
+
+#curriculum-vitae h2 {
+  font-size: 2em;
+  font-weight: 400;
+  color: #111;
+  margin-bottom: 1em;
+}
+
+#curriculum-vitae h3 {
+  font-size: 1.5em;
+  font-weight: 300;
+  color: #333;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+#curriculum-vitae .cv-section {
+  background-color: #fff;
+  margin: 2vh 0 !important;
+  display: grid;
+  padding: 1vh 3vw;
+}
+
+#curriculum-vitae .cv-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#curriculum-vitae ul li {
+  margin-bottom: 1.5em;
+}
+
+#curriculum-vitae ul li span {
+  display: block;
+  color: #333;
+}
+
+#curriculum-vitae ul li ul.description {
+  list-style-type: circle;
+  margin-top: 0.5em;
+  padding-left: 1em;
+}
+
+#curriculum-vitae ul li ul.description li {
+  font-size: 0.9em;
+  color: #777;
+  margin-bottom: 0.5em;
+}
+
+#curriculum-vitae ul li .details {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  justify-items: start;
+}
+
+#curriculum-vitae ul li .details h4 {
+  font-size: 1.2em;
+  font-weight: 400;
+  color: #2180A6;
+  margin: 0.3em 0;
+
+}
+
+#curriculum-vitae ul li .details .date,
+#curriculum-vitae ul li .details .location {
+  justify-self: end;
+}
+
+
+
+@media screen and (max-width: 800px) {
+  #curriculum-vitae {
+    padding: 3vh 4vw;
+  }
+
+  #curriculum-vitae h2 {
+    font-size: 1.8em;
+  }
+
+  #curriculum-vitae h3 {
+    font-size: 1.3em;
+  }
+
+  #curriculum-vitae ul li h4 {
+    font-size: 1.1em;
+  }
+}
+
+/* Skills and Languages Section Styles */
+#skills-section ul, #languages-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#skills-section ul li, #languages-section ul li {
+  font-size: 1em;
+  color: #777;
+}
+
+#skills-section ul li span, #languages-section ul li span{
+  display: inline;
+  color: #2180A6;
 }
 
 
