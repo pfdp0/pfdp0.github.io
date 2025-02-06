@@ -190,8 +190,9 @@ h1{
 }
 
 #publications ul li{
+  position: relative;
   box-sizing: border-box;
-  padding: 3vh 3vw;
+  padding: 3vh 2vw;
   margin: 2vh 0;
   background-color: #fff;
   display: grid;
@@ -200,7 +201,6 @@ h1{
 
 #publications ul li .image{
   position: relative;
-  /*background-color: #3e9eff;*/
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 1;
@@ -213,20 +213,22 @@ h1{
 
 #publications ul li .image img{
   max-width: 100%;
-  vertical-align: middle;
   max-height: 400px;
-  margin: auto;
   margin-top: 5vh;
 }
 
-#publications ul li .image .conference{
+#publications ul li .conference, #publications ul li .preprint{
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 2vw;
+  top: 3vh;
   background: rgba(29, 113, 147, 0.9);
   padding: 2px 4px;
   font-weight: 300;
   color: white;
+}
+
+#publications ul li .preprint{
+  background: rgba(100, 100, 100, 0.9);
 }
 
 #publications .content,
